@@ -1,0 +1,26 @@
+Q：
+Exercise 1.5.  Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is using applicative-order evaluation or normal-order evaluation. He defines the following two procedures:
+
+(define (p) (p))
+
+(define (test x y)
+  (if (= x 0)
+      0
+      y))
+
+Then he evaluates the expression
+
+(test 0 (p))
+
+What behavior will Ben observe with an interpreter that uses applicative-order evaluation? What behavior will he observe with an interpreter that uses normal-order evaluation? Explain your answer. (Assume that the evaluation rule for the special form if is the same whether the interpreter is using normal or applicative order: The predicate expression is evaluated first, and the result determines whether to evaluate the consequent or the alternative expression.)
+
+关于applicative-order和normal-order的解释。
+This alternative ``fully expand and then reduce'' evaluation method is known as normal-order evaluation, in contrast to the ``evaluate the arguments and then apply'' method that the interpreter actually uses, which is called applicative-order evaluation. 
+
+所以我们知道normal-order中，会先全部完全展开，然后再逐一解释。
+在applicative-order中，会先逐一求解出形式参数的值，然后再执行函数。
+
+A:
+参考了网上的解释。
+如果是applicative-order，会无限执行p函数，因此程序不会停止。
+反之，normal-order会先展开函数体，然后逐一判断，在判断到x=0时即返回结果0，而不会执行后续的函数p。
