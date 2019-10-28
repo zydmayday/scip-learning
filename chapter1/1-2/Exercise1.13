@@ -1,0 +1,16 @@
+Q:
+Exercise 1.13.  Prove that Fib(n) is the closest integer to phi**n/root(5), where phi = (1 + root(5))/2. Hint: Let sigma = (1 - root(5))/2. Use induction and the definition of the Fibonacci numbers (see section 1.2.2) to prove that Fib(n) = (phi**n - sigma**n)/root(5).
+
+A:
+首先证明Fib(n) = (phi**n - sigma**n)/5.
+分别计算出Fib(n+1)和Fib(n+2)，即可得答案。
+另外需要单独计算Fib(0)和Fib(1).
+
+已知Fib(n)的表达式，
+只需要求证|Fib(n) - phi**n/root(5)| < 0.5即可得知，Fib(n)是最近的整数。
+又知|Fib(n) - phi**n/root(5)| = sigma**n/root(5)，
+只需要求证sigma**n/root(5)小于0.5即可。
+
+因为sigma的绝对值小于1，所以|sigma**n|<1，
+又因为1/root(5)小于0.5，
+所以可得sigma**n/root(5)小于0.5，证毕。
