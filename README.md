@@ -1,3 +1,3 @@
 # sicp-learning
 
-自己学习SCIP的一些内容。
+自己学习SICP的一些内容。
